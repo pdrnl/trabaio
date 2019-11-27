@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -13,7 +13,7 @@ import net.proteanit.sql.DbUtils;
         
 /**
  *
- * @author Yuri
+ * @author Pedro
  */
 public class TelaCliente extends javax.swing.JInternalFrame {
     Connection conexao=null;
@@ -37,14 +37,14 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             
             //Validação dos campos
             if ((txtCliNome.getText().isEmpty()) || (txtCliEmail.getText().isEmpty()) || (txtCliEndereco.getText().isEmpty()) || (txtCliFone.getText().isEmpty())) {
-                JOptionPane.showMessageDialog(null, "Escreve no baguio ai mano");
+                JOptionPane.showMessageDialog(null, "Insira as Informações.");
             } else {
 
                 //Adiciona os comandos ao banco            
                 int adicionado = pst.executeUpdate();
                 System.out.println(adicionado);
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Chamo na  venda carai");
+                    JOptionPane.showMessageDialog(null, "Adicionado");
                     txtCliNome.setText(null);
                     txtCliEmail.setText(null);
                     txtCliEndereco.setText(null);
@@ -92,14 +92,14 @@ public class TelaCliente extends javax.swing.JInternalFrame {
             pst.setString(5, txtCliId.getText());
 
             if ((txtCliNome.getText().isEmpty()) || (txtCliEmail.getText().isEmpty()) || (txtCliEndereco.getText().isEmpty()) || (txtCliFone.getText().isEmpty())) {
-                JOptionPane.showMessageDialog(null, "Altera direito ai mano");
+                JOptionPane.showMessageDialog(null, "Verifique as informações inseridas.");
             } else {
 
                 //Adiciona os comandos ao banco            
                 int adicionado = pst.executeUpdate();
                 System.out.println(adicionado);
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Mudo carai");
+                    JOptionPane.showMessageDialog(null, "Alterado");
                     txtCliNome.setText(null);
                     txtCliEmail.setText(null);
                     txtCliEndereco.setText(null);
@@ -112,7 +112,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         }
     }
     private void remover() {
-        int confirma = JOptionPane.showConfirmDialog(null, "Quer fazer isso memo?A esculha é tua", "É isso", JOptionPane.YES_NO_OPTION);
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma Remoção?", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_NO_OPTION) {
             String sql = "delete from tbclientes where idcli=?";
             try {
@@ -120,7 +120,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 pst.setString(1, txtCliId.getText());
                 int apagado = pst.executeUpdate();
                 if (apagado > 0) {
-                    JOptionPane.showMessageDialog(null, "Morreu");
+                    JOptionPane.showMessageDialog(null, "Removido!");
                     txtCliNome.setText(null);
                     txtCliEmail.setText(null);
                     txtCliEndereco.setText(null);

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -68,11 +68,11 @@ public class TelaOs extends javax.swing.JInternalFrame {
 
             //validacao dos campos obrigatorios
             if (txtCliId.getText().isEmpty() || (txtOsEquip.getText().isEmpty() || (txtOsDef.getText().isEmpty()))) {
-                JOptionPane.showMessageDialog(null, "ESCREVE AI DOIDAO");
+                JOptionPane.showMessageDialog(null, "Insira as Informações");
             } else {
                 int adicionado = pst.executeUpdate();
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Chego trampo carai");
+                    JOptionPane.showMessageDialog(null, "Nova OS Adicionada");
                     txtCliId.setText(null);
                     txtOsEquip.setText(null);
                     txtOsDef.setText(null);
@@ -117,10 +117,10 @@ public class TelaOs extends javax.swing.JInternalFrame {
                 txtCliPesquisar.setEnabled(false);
                 tblClientes.setVisible(false);
             } else {
-                JOptionPane.showMessageDialog(null, "DIGITA DIREITO CARAI");
+                JOptionPane.showMessageDialog(null, "Verifique as Informações");
             }
         } catch (com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException e) {
-            JOptionPane.showMessageDialog(null, "TEM ISSO AI NAO CHARA");
+            JOptionPane.showMessageDialog(null, "Não encontrado.");
             //System.out.println(e);
         } catch (Exception e2) {
             JOptionPane.showMessageDialog(null, e2);
@@ -142,11 +142,11 @@ public class TelaOs extends javax.swing.JInternalFrame {
 
             //validacao dos campos obrigatorios
             if (txtCliId.getText().isEmpty() || (txtOsEquip.getText().isEmpty() || (txtOsDef.getText().isEmpty()))) {
-                JOptionPane.showMessageDialog(null, "ESCREVE AI DOIDAO");
+                JOptionPane.showMessageDialog(null, "Insira as Informações");
             } else {
                 int adicionado = pst.executeUpdate();
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "MUDO CARAI");
+                    JOptionPane.showMessageDialog(null, "Alterado");
                     txtOs.setText(null);
                     txtData.setText(null);
                     txtCliId.setText(null);
@@ -167,7 +167,7 @@ public class TelaOs extends javax.swing.JInternalFrame {
     }
 
     private void excluir_os() {
-        int confirma = JOptionPane.showConfirmDialog(null, "VAI PERDE O TRAMPO MEMO??????", "SE LIGA MAN", JOptionPane.YES_NO_OPTION);
+        int confirma = JOptionPane.showConfirmDialog(null, "Deseja mesmo deletar?", "Não esqueçã que não é possível recuperar depois.", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
             String sql = "delete from tbos where os=?";
             try {
@@ -175,7 +175,7 @@ public class TelaOs extends javax.swing.JInternalFrame {
                 pst.setString(1, txtOs.getText());
                 int apagado = pst.executeUpdate();
                 if (apagado > 0) {
-                    JOptionPane.showMessageDialog(null, "Vacilo perdeu o trampo jaum");
+                    JOptionPane.showMessageDialog(null, "Deletado");
                     txtOs.setText(null);
                     txtData.setText(null);
                     txtCliId.setText(null);
@@ -197,7 +197,7 @@ public class TelaOs extends javax.swing.JInternalFrame {
     }
 
     private void imprimir_os() {
-        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a emissão deste relatório?", "Se liga", JOptionPane.YES_NO_OPTION);
+        int confirma = JOptionPane.showConfirmDialog(null, "Deseja emitir relatório?", "Ok.", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
             try {
                 HashMap filtro = new HashMap();
@@ -359,7 +359,7 @@ public class TelaOs extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Situação");
 
-        cboOsSit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "é uma", "eh outra", "mais uma", "uma opção", "outra opção", " " }));
+        cboOsSit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ª Opção", "2ª Opção", "3ª Opção", "4ª Opção", "5ª Opção", " " }));
         cboOsSit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboOsSitActionPerformed(evt);

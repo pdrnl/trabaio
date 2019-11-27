@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Yuri
+ * @author Pedro
  */
 public class TelaUsuario extends javax.swing.JInternalFrame {
 
@@ -63,7 +63,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
             pst.setString(6, cboUsuPerfil.getSelectedItem().toString());
             //Validação dos campos
             if ((txtUsuId.getText().isEmpty()) || (txtUsuNome.getText().isEmpty()) || (txtUsuLogin.getText().isEmpty()) || (txtUsuSenha.getText().isEmpty())) {
-                JOptionPane.showMessageDialog(null, "Escreve no baguio ai mano");
+                JOptionPane.showMessageDialog(null, "Insira as Informações");
             } else {
 
                 //Adiciona os comandos ao banco            
@@ -95,14 +95,14 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
             pst.setString(6, txtUsuId.getText());
 
             if ((txtUsuId.getText().isEmpty()) || (txtUsuNome.getText().isEmpty()) || (txtUsuLogin.getText().isEmpty()) || (txtUsuSenha.getText().isEmpty())) {
-                JOptionPane.showMessageDialog(null, "Altera direito ai mano");
+                JOptionPane.showMessageDialog(null, "Verifique as Informações inseridas.");
             } else {
 
                 //Adiciona os comandos ao banco            
                 int adicionado = pst.executeUpdate();
                 System.out.println(adicionado);
                 if (adicionado > 0) {
-                    JOptionPane.showMessageDialog(null, "Mudo carai");
+                    JOptionPane.showMessageDialog(null, "Alterado.");
                     txtUsuId.setText(null);
                     txtUsuNome.setText(null);
                     txtUsuFone.setText(null);
@@ -116,7 +116,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
     }
 
     private void remover() {
-        int confirma = JOptionPane.showConfirmDialog(null, "Quer fazer isso memo?A esculha é tua", "É isso", JOptionPane.YES_NO_OPTION);
+        int confirma = JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir?", "Ok.", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_NO_OPTION) {
             String sql = "delete from tbusuarios where iduser=?";
             try {
@@ -124,7 +124,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
                 pst.setString(1, txtUsuId.getText());
                 int apagado = pst.executeUpdate();
                 if (apagado > 0) {
-                    JOptionPane.showMessageDialog(null, "Morreu");
+                    JOptionPane.showMessageDialog(null, "Excluído.");
                     txtUsuId.setText(null);
                     txtUsuNome.setText(null);
                     txtUsuFone.setText(null);

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,7 +16,7 @@ import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
- * @author Yuri
+ * @author Pedro
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
@@ -251,7 +251,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void menOpcSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menOpcSairActionPerformed
         // TODO add your handling code here:
         //exibe uma caixa de dialog
-        int sair = JOptionPane.showConfirmDialog(null, "Tem certeza mano?", "Se liga", JOptionPane.YES_NO_OPTION);
+        int sair = JOptionPane.showConfirmDialog(null, "Deseja Sair?", "Confirma?", JOptionPane.YES_NO_OPTION);
         if (sair == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
@@ -274,7 +274,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void menRelCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menRelCliActionPerformed
         // TODO add your handling code here:
         //gera relatorio de clientes
-        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão deste relatório?", "Se liga", JOptionPane.YES_NO_OPTION);
+        int confirma = JOptionPane.showConfirmDialog(null, "Emitir este relatório?", "Ok.", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
             try {
                 JasperPrint print = JasperFillManager.fillReport("C:/reports/clientes.jasper", null, conexao);
@@ -287,7 +287,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void menRelServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menRelServActionPerformed
         // TODO add your handling code here:
-        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a emissão deste relatório?", "Se liga", JOptionPane.YES_NO_OPTION);
+        int confirma = JOptionPane.showConfirmDialog(null, "Emitir este relatório?", "Ok.", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
             try {
                 JasperPrint print = JasperFillManager.fillReport("C:/reports/servicos.jasper", null, conexao);

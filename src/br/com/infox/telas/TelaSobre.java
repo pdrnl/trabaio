@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,7 +7,7 @@ package br.com.infox.telas;
 
 /**
  *
- * @author Yuri
+ * @author Pedro
  */
 public class TelaSobre extends javax.swing.JFrame {
 
@@ -35,9 +35,9 @@ public class TelaSobre extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sobre");
 
-        jLabel1.setText("Sistema de controle para OS");
+        jLabel1.setText("Sistema de Abertura e Manutenção de Ordem de Serviço");
 
-        jLabel2.setText("Desenvolvido por mim mesmo");
+        jLabel2.setText("Desenvolvido por Pedro Nunes Lourenço");
 
         jLabel3.setText("Sobre a licença GPL");
 
